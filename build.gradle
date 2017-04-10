@@ -18,8 +18,8 @@ buildscript {
 }
 
 dependencies {
-    compile("ua.profitsoft.social:spring-social-botFramework-core:$springSocialBotFrameworkVersion")
-    compile("ua.profitsoft.social:spring-social-botFramework-config:$springSocialBotFrameworkVersion")
+    compile("ua.profitsoft.social:spring-social-botframework-core:$springSocialBotFrameworkVersion")
+    compile("ua.profitsoft.social:spring-social-botframework-config:$springSocialBotFrameworkVersion")
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion") {
         exclude module: "spring-boot-starter-logging"
     }
