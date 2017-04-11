@@ -3,6 +3,7 @@ apply plugin: "org.springframework.boot"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 version = "0.0.1"
+jar.baseName = "echo-bot"
 
 repositories {
     mavenCentral()

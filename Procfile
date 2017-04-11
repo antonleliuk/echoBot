@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/echoBot-0.0.1.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/echo-bot-0.0.1.jar
