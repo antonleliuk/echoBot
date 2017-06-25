@@ -19,10 +19,16 @@ import org.springframework.social.botframework.api.data.cards.ReceiptItem;
 import org.springframework.social.botframework.api.data.cards.SignInCard;
 import org.springframework.social.botframework.api.data.cards.ThumbnailCard;
 import org.springframework.social.botframework.api.data.cards.VideoCard;
+import org.springframework.social.botframework.api.data.cards.adaptiveCard.data.elements.Choice;
+import org.springframework.social.botframework.api.data.cards.adaptiveCard.data.elements.InputChoiceSet;
+import org.springframework.social.botframework.api.data.cards.adaptiveCard.data.elements.InputDate;
 import org.springframework.social.botframework.api.data.cards.adaptiveCard.data.elements.InputText;
+import org.springframework.social.botframework.api.data.cards.adaptiveCard.data.elements.InputToggle;
 import org.springframework.social.botframework.api.data.cards.adaptiveCard.data.elements.TextBlock;
 import org.springframework.social.botframework.api.data.cards.adaptiveCard.dict.CardElementType;
+import org.springframework.social.botframework.api.data.cards.adaptiveCard.dict.ChoiceInputStyle;
 import org.springframework.social.botframework.api.data.cards.adaptiveCard.dict.Color;
+import org.springframework.social.botframework.api.data.cards.adaptiveCard.dict.SeparationStyle;
 import org.springframework.social.botframework.api.data.cards.adaptiveCard.dict.TextInputStyle;
 import org.springframework.social.botframework.api.dict.AttachmentLayout;
 import org.springframework.social.botframework.api.dict.CardActionType;
@@ -193,8 +199,15 @@ public class EchoController {
                                 .subTitle("Test adaptive card")
                                 .type(CardElementType.AdaptiveCard)
                                 .fallbackText("Client doesn't support adaptive cards.")
-                                .body(new TextBlock().text("Text of block").color(Color.ATTENTION))
-                                .body(new InputText().multiLine(false).maxLength(100).style(TextInputStyle.text));
+                                .body(new TextBlock().text("Warning block").color(Color.WARNING))
+                                .body(new TextBlock().text("Attention block").color(Color.ATTENTION))
+                                .body(new InputText().multiLine(false).maxLength(100).placeholder("Email").style(TextInputStyle.email))
+                                .body(new InputText().multiLine(true).placeholder("Description").style(TextInputStyle.text))
+                                .body(new InputToggle().title("Choice title").placeholder("Choice").value(true))
+                                .body(new InputChoiceSet().style(ChoiceInputStyle.expanded)
+                                        .choice(new Choice().title("less3").value("less3").selected(true))
+                                        .choice(new Choice().title("more3").value("more3")))
+                                .body(new InputDate().placeholder("Birthday"));
                         replyActivity.addAttachment(adc.toAttachment());
                         break;
                     default:
