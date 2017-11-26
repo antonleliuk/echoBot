@@ -23,7 +23,7 @@ dependencies {
     compile("ua.profitsoft.social:spring-social-botframework-core:$springSocialBotFrameworkVersion")
     compile("ua.profitsoft.social:spring-social-botframework-config:$springSocialBotFrameworkVersion")
     compile("ua.profitsoft.social:spring-social-botframework-text:$springSocialBotFrameworkVersion")
-    compile("ua.profitsoft.social:spring-social-botframework-service:$springSocialBotFrameworkVersion")
+//    compile("ua.profitsoft.social:spring-social-botframework-service:$springSocialBotFrameworkVersion")
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion") {
         exclude module: "spring-boot-starter-logging"
     }

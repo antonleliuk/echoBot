@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" name="echo_bot_logger_configuration" status="warn">
+    <Properties>
+        <Property name="excludedPackages">sun.reflect,java.lang.reflect,java.util.concurrent,org.apache.tomcat.util,org.apache.tomcat.websocket,org.apache.catalina,javax.servlet.http,org.apache.coyote,org.apache.logging.log4j.web</Property>
+    </Properties>
+    <ThresholdFilter level="trace"/>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p %xEx{filters(${excludedPackages})} [%t] %C{2} (%F:%L) - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>

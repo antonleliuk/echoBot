@@ -203,7 +203,7 @@ public class EchoController {
                                 .body(new InputText().multiLine(false).maxLength(100).placeholder("Email").style(TextInputStyle.email))
                                 .body(new InputText().multiLine(true).placeholder("Description").style(TextInputStyle.text))
                                 .body(new InputToggle().title("Choice title").placeholder("Choice").value(true))
-                                .body(new InputChoiceSet().style(ChoiceInputStyle.expanded)
+                                .body(new InputChoiceSet().style(ChoiceInputStyle.compact)
                                         .choice(new Choice().title("less3").value("less3").selected(true))
                                         .choice(new Choice().title("more3").value("more3")))
                                 .body(new InputDate().placeholder("Birthday"));
